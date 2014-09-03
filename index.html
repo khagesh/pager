@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Page to display different formats of Pager</title>
+    <link rel="stylesheet" href="Styles/Pager.css" />
+</head>
+<body>
+    <div class="Pager1 Pager"></div>
+    <div class="Pager2 Pager"></div>
+    <div class="Pager3 Pager"></div>
+    <div class="Pager4 Pager"></div> 
+    <script type="text/javascript" src="Scripts/Utils.js"></script>
+    <script type="text/javascript" src="Scripts/Pager.js"></script>
+    <script type="text/javascript">
+        var Pager = new Module.Pager.GetPager({
+            TotalResults: 220,
+            ContainerSelector: '.Pager1',
+            PagerFormat: "{First[class='FirstLinkPager'&data='FilterID$:$1234'&text=First]} {Previous[class='PrevLinkPager'&text=Prev]} {PrevPages[class='PrevPages'&text=...]}"
+                           +"  {PageNumbers[class='PG-PageNumbers']} {NextPages[class='NextPages'&text=...]} {Next[class='NextLinkPager'&text=Next]}"
+                            +" {Last[class='LastLinkPager'&text=Last]} {ShowText[text=Page size:]}"
+                            +" {PagerDropDown[values='10:10,20:20,50:50'&class='PagerDropDown']}"
+                            +" {ShowText[text=Page]} {PageNavigator[class='Module-PageNavigator']} {ShowText[text=of]} {TotalPages[class='Module-TotalPages']}"
+                            +" {ShowText[class='pagesText'&text=pages]} {ShowText[text=for]} {TotalResults[class='totalText']} {ShowText[text=items]}"
+        });
+        // hook to the change event
+        Pager.OnChangeRequest = function (event) {
+            console.log("Current Page for Pager1 is " + this.GetCurrentPage() + " Page Size is " + this.GetPageSize() + " Total Pages " + this.GetTotalPages());
+        };
+        Pager.OnFirst = function (oAttributes) {
+            console.log("Hit first event handler");
+            return oAttributes;
+        };
+        // render the pager
+        Pager.Render();
+
+        var Pager2 = new Module.Pager.GetPager({
+            TotalResults: 120,
+            ContainerSelector: '.Pager2',
+            PagerFormat: "{Previous[class='PrevLinkPager'&text=" + escape('<img src="Images/Prev.png" alt="Prev" />') + "]}" +
+                        "{ShowText[text=Page]} {PageNavigator[class='Module-PageNavigator']} {ShowText[text=of]} {TotalPages[class='Module-TotalPages']}"
+                        + "{Next[class='NextLinkPager'&text=" + escape('<img src="Images/Next.png" alt="Next" />') + "]}"
+        });
+        
+        Pager2.Render();
+
+        var Pager3 = new Module.Pager.GetPager({
+            TotalResults: 120,
+            ContainerSelector: '.Pager3',
+            PagerFormat: "{First[class='FirstLinkPager'&text=" + escape('<img src="Images/Pager/firstB.png" alt="First" />') + "]} " +
+                        "{Previous[class='PrevLinkPager'&text=" + escape('<img src="Images/Pager/previousB.png" alt="Prev" />') + "]}" +
+                        "{ShowText[text=Page]} {PageNavigator[class='Module-PageNavigator']} {ShowText[text=of]} {TotalPages[class='Module-TotalPages']}" +
+                        "{ShowText[text=Page size:]} {PagerDropDown[values='10:10,20:20,50:50'&class='PagerDropDown']}" +
+                        "{Next[class='NextLinkPager'&text=" + escape('<img src="Images/Pager/nextB.png" alt="Next" />') + "]}" +
+                        "{Last[class='LastLinkPager'&text=" + escape('<img src="Images/Pager/lastB.png" alt="Next" />') + "]}"
+        });
+
+        Pager3.Render();
+
+        var Pager4 = new Module.Pager.GetPager({
+            TotalResults: 120,
+            ContainerSelector: '.Pager4',
+            PagerFormat: "{Previous[class='PrevLinkPager'&text=" + escape('<img src="Images/Prev.png" alt="Prev" />') + "]}" +
+                        "{ShowText[text=Page]} {PageNavigator[class='Module-PageNavigator']} {ShowText[text=of]} {TotalPages[class='Module-TotalPages']}"
+                        + "{Next[class='NextLinkPager'&text=" + escape('<img src="Images/Next.png" alt="Next" />') + "]}"
+        });
+
+        Pager4.Render();
+
+    </script>
+</body>
+</html>

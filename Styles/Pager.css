@@ -1,0 +1,41 @@
+﻿.Pager a, .Pager span, .Pager p, .Pager img {
+    margin: 0;
+	padding: 0;
+	border: 0;
+    font:normal 12px "Segoe UI";
+    text-transform:uppercase;
+}
+
+.Pager span, .Pager p, .Pager select, .Pager input[type='text'] {
+        color:#666;
+}
+
+span.PG-PageNumbers {
+	font-weight: bold;
+}
+
+.Pager a, .Pager span, .Pager input[type='text'] {
+	margin: 0px 2px;
+    padding:0px 2px;
+}
+
+.Pager img {
+    vertical-align:middle;
+    width:32px;
+    height:32px;
+}
+
+.Pager input[type='text'], .Pager select {
+    font:normal 12px "Segoe UI";
+    margin: 0;
+	padding: 0;
+    vertical-align: baseline;
+}
+
+.Pager input[type='text'] {
+        width:15px;
+}
+
+.Pager1, .Pager2, .Pager3, .Pager4 {
+    margin: 30px 0px;
+}
