@@ -6,7 +6,7 @@ JavaScript pager.
 Sample 1
 =====
 
-[Pager with all functionalities](Images/Wiki/Full-Pager.jpg)
+![Build Status](Images/Wiki/Full-Pager.jpg)
 
 <pre>
   var Pager = new Module.Pager.GetPager({
