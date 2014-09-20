@@ -8,7 +8,7 @@ Sample 1
 
 ![Build Status](Images/Wiki/Full-Pager.jpg)
 
-<pre>
+```javascript
   var Pager = new Module.Pager.GetPager({
             TotalResults: 220,
             ContainerSelector: '.Pager1',
@@ -25,4 +25,4 @@ Sample 1
         };
         // render the pager
         Pager.Render();
-</pre>
+```
